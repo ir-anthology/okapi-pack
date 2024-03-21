@@ -1,0 +1,21 @@
+{
+  "image": "mam10eks/okapi-pack:0.0.1-dev",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.datawrangler",
+        "ms-azuretools.vscode-docker"
+      ]
+    },
+    "codespaces": {
+      "openFiles":[
+        "README.md"
+      ]
+    }
+
+  }
+}
+

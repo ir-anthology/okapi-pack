@@ -1,0 +1,14 @@
+#docker build -t mam10eks/okapi-pack:0.0.1-dev -f Dockerfile.dev .
+FROM ubuntu:18.04
+
+WORKDIR /okapi-pack
+
+RUN apt-get update \
+	&& apt-get install -y build-essential wget \
+	&& cd /okapi-pack \
+	&& wget https://www.staff.city.ac.uk/~andym/OKAPI-PACK/package/okapi-2.53.tar.gz
+
+RUN dpkg --add-architecture i386 \
+	&& apt-get update \
+	&& apt-get install -y libc6:i386 libncurses5:i386 libstdc++6:i386 git wget curl htop
+
