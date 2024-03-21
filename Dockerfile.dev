@@ -6,7 +6,10 @@ WORKDIR /okapi-pack
 RUN apt-get update \
 	&& apt-get install -y build-essential wget \
 	&& cd /okapi-pack \
-	&& wget https://www.staff.city.ac.uk/~andym/OKAPI-PACK/package/okapi-2.53.tar.gz
+	&& wget https://www.staff.city.ac.uk/~andym/OKAPI-PACK/package/okapi-2.53.tar.gz \
+	&& tar -xf okapi-2.53.tar.gz
+
+ENV PATH=/okapi-pack/okapi-pack/bin:${PATH}
 
 RUN dpkg --add-architecture i386 \
 	&& apt-get update \
